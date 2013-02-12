@@ -1,0 +1,49 @@
+﻿@model int[]
+@*The model is an array of int. Pretty simple, isn't it?*@
+
+@{
+    ViewBag.Title = "ASP.NET MVC Array Data Binding sample - Array Post Result";
+}
+
+<div class="center-on-screen">
+
+    <h2>Array Post Back Result [ @ViewBag.PostBack ]</h2>
+
+    You selected the following Colors:
+
+    @*@{ var selectedLacenyTypes = string.Join(", ", Model); }
+
+      @selectedLacenyTypes*@
+
+    <table style="width: 100%; margin-top: 25px;">
+        <tr>
+
+            @foreach (var selectedColor in Model)
+            {
+                <td style="text-align: center;">
+                    @{var colorName = (Colors)selectedColor;}
+
+                    @*A fancy small square to show the color selected and make the UI attractive! :P*@
+                    <div style="display: inline-block; width: 35px; height: 35px; background-color: @colorName"></div>
+                    <br />
+                    @*When the user posts back to the server, the logic defined allows him to submit the values of dropdowns which didn't have an option selected. This is interesting because we can use this info to take an action like in the following if statement*@
+                    @if(colorName != 0)
+                    {
+                        @colorName
+                    }
+                    else
+                    {
+                        @:No color
+                    }
+                </td>
+            }
+
+        </tr>
+    </table>
+
+<br />
+<br />
+
+<button type="button" id="go-back" onclick="javascript:history.back(1)"><= GO back to TRY again</button>
+
+</div>

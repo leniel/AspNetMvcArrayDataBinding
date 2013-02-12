@@ -1,0 +1,41 @@
+﻿@model ColorsModel
+
+@{
+    ViewBag.Title = "ASP.NET MVC Array Data Binding sample - Index";
+}
+
+@using (Html.BeginForm("TestArrayPost", "Home", FormMethod.Post, new { @class = "center-on-screen" }))
+{
+    <h1>ASP.NET MVC Array Data Binding sample</h1>
+    
+    <div id="controls">
+
+        <h2>Select at least 1 Color:</h2>
+
+        @*Pay special attention to how we must name the form fields. selectedColors is the parameter
+    name I have defined in the controller action TestArrayPost. Then we suffix the name with [n], where
+    n starts must be zero-based and unbroken. This is necessary so that ASP.NET MVC can do its job.*@
+        @Html.DropDownList("selectedColors[0]", Model.Colors, "-- Pick a Color --")
+        &nbsp;&nbsp;&nbsp;
+    @Html.DropDownList("selectedColors[1]", Model.Colors, "-- Pick a Color --")
+        &nbsp;&nbsp;&nbsp;
+    @Html.DropDownList("selectedColors[2]", Model.Colors, "-- Pick a Color --")
+
+        @*Submit buttons*@
+        <div id="buttons">
+        <input type="submit" value="Post me BACK traditionally!" id="submit-normal" />
+        &nbsp;&nbsp;&nbsp;
+    <button type="button" id="submit-ajax">Post me BACK through AJAX!</button>
+        </div>
+
+    </div>
+    
+    // Container used for AJAX requests
+    <div id="result"></div>
+    
+    <footer>Kindly developed by <a href="http://leniel.net" target="_blank">Leniel Macaferi</a> on February 11-12, 2013</footer>
+    
+}
+
+@*JavaScript code to control the UI logic and to post back through AJAX*@
+@Scripts.Render("~/bundles/js")
