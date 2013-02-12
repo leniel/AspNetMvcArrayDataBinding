@@ -1,7 +1,7 @@
-﻿using AspnetMvcArrayDataBinding.Models;
+﻿using AspNetMvcArrayDataBinding.Models;
 using System.Web.Mvc;
 
-namespace AspnetMvcArrayDataBinding.Controllers
+namespace AspNetMvcArrayDataBinding.Controllers
 {
     public class HomeController : Controller
     {

@@ -1,1 +1,1 @@
-﻿<%@ Application Codebehind="Global.asax.cs" Inherits="AspnetMvcArrayDataBinding.MvcApplication" Language="C#" %>
+﻿<%@ Application Codebehind="Global.asax.cs" Inherits="AspNetMvcArrayDataBinding.MvcApplication" Language="C#" %>

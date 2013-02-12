@@ -1,7 +1,7 @@
 ﻿using System.Web;
 using System.Web.Optimization;
 
-namespace AspnetMvcArrayDataBinding
+namespace AspNetMvcArrayDataBinding
 {
     public class BundleConfig
     {
@@ -9,7 +9,7 @@ namespace AspnetMvcArrayDataBinding
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/js").Include(
-                        "~/Scripts/AspnetMvcArrayDataBinding.js"));
+                        "~/Scripts/AspNetMvcArrayDataBinding.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
                         "~/Scripts/jquery-{version}.js"));

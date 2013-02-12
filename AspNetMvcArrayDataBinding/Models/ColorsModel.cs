@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
 
-namespace AspnetMvcArrayDataBinding.Models
+namespace AspNetMvcArrayDataBinding.Models
 {
     public class ColorsModel
     {
