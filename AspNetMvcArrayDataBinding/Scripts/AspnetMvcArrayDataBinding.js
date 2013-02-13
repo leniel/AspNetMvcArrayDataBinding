@@ -49,34 +49,34 @@
         }
     });
 
-    $("#submit-ajax").click(function () {
+$("#submit-ajax").click(function () {
 
-        var selectedColors = [];
+    var selectedColors = [];
 
-        // For each select HTML element/dropdown,
-        // push its selected value into selectedColors
-        $('select option:selected').each(function () {
-            selectedColors.push($(this).val());
-        });
-
-        $.ajax({
-            type: "POST",
-            url: "/Home/TestArrayPost",
-            dataType: "html",
-            traditional: true,
-            data: { selectedColors: selectedColors },
-            success: function (response) {
-
-                $("#result").html(response).fadeIn();
-
-                // Hiding the GO back button...
-                $("#result").find("#go-back").hide();
-
-            },
-            error: function (xhr, textStatus, exceptionThrown) {
-                $('#result').html(exceptionThrown);
-            }
-        });
+    // For each select HTML element/dropdown,
+    // push its selected value into selectedColors
+    $('select option:selected').each(function () {
+        selectedColors.push($(this).val());
     });
+
+    $.ajax({
+        type: "POST",
+        url: "/Home/TestArrayPost",
+        dataType: "html",
+        traditional: true,
+        data: { selectedColors: selectedColors },
+        success: function (response) {
+
+            $("#result").html(response).fadeIn();
+
+            // Hiding the GO back button...
+            $("#result").find("#go-back").hide();
+
+        },
+        error: function (xhr, textStatus, exceptionThrown) {
+            $('#result').html(exceptionThrown);
+        }
+    });
+});
 
 });

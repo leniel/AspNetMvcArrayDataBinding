@@ -14,13 +14,12 @@
 
         @*Pay special attention to how we must name the form fields. selectedColors is the parameter
     name I have defined in the controller action TestArrayPost. Then we suffix the name with [n], where
-    n starts must be zero-based and unbroken. This is necessary so that ASP.NET MVC can do its job.*@
-        @Html.DropDownList("selectedColors[0]", Model.Colors, "-- Pick a Color --")
-        &nbsp;&nbsp;&nbsp;
-    @Html.DropDownList("selectedColors[1]", Model.Colors, "-- Pick a Color --")
-        &nbsp;&nbsp;&nbsp;
-    @Html.DropDownList("selectedColors[2]", Model.Colors, "-- Pick a Color --")
-
+    n must be zero-based and unbroken. This is necessary so that ASP.NET MVC model binder can do its job.*@
+        @for (int i = 0; i < 3; i++)
+        {
+            @Html.DropDownList("selectedColors["+i+"]", Model.Colors, "-- Pick a Color --")
+        }
+        
         @*Submit buttons*@
         <div id="buttons">
         <input type="submit" value="Post me BACK traditionally!" id="submit-normal" />

@@ -13,6 +13,11 @@ namespace AspNetMvcArrayDataBinding.Controllers
             return View(model);
         }
 
+        /// <summary>
+        /// This action method works with a simple int[] array that's not part of a ViewModel.
+        /// </summary>
+        /// <param name="selectedColors">Simple int[] array</param>
+        /// <returns>ArrayPostResult view</returns>
         [HttpPost]
         public ActionResult TestArrayPost(int[] selectedColors)
         {
@@ -23,7 +28,7 @@ namespace AspNetMvcArrayDataBinding.Controllers
                 return PartialView("ArrayPostResult", selectedColors);
             }
 
-            ViewBag.PostBack = "Traditional";
+            ViewBag.PostBack = "Full";
 
             return View("ArrayPostResult", selectedColors);
         }
